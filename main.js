@@ -79,7 +79,7 @@ let createAnswer = async () => {
     if(!offer) return alert("Retrieve offer from peer first ...");
 
     offer = JSON.parse(offer)
-    await peerConnection.setRemoteDescription();
+    await peerConnection.setRemoteDescription(offer);
 
     let answer = await peerConnection.createAnswer();
     await peerConnection.setLocalDescription(answer);
@@ -88,8 +88,20 @@ let createAnswer = async () => {
 
 }
 
+let addAnswer = async () => {
+    let answer = document.getElementById('answer-sdp').value;
+    if(!answer) return alert("Retrieve answer from peer first ...");
+
+    answer = JSON.parse(answer);
+
+    if(!peerConnection.currentRemoteDescription){
+        peerConnection.setRemoteDescription(answer)
+    }
+}
+
 init();
 
 // add on click event listener to create-offer button
 document.getElementById('create-offer').addEventListener('click', createOffer)
 document.getElementById('create-answer').addEventListener('click', createAnswer)
+document.getElementById('add-answer').addEventListener('click', addAnswer)

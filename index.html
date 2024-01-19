@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div id="videos">
+        <video autoplay class="video-player" id="user-1" playsinline></video>
+        <video autoplay class="video-player" id="user-2" playsinline></video>
+    </div>
+
+    <div id="sdp-offer-wrapper">
+        <button id="create-offer">Create offer</button>
+        <label for="sdp-offer">SDP offer</label>
+        <textarea name="sdp-offer" id="offer-sdp" cols="30" rows="10"></textarea>
+    </div>
+
+    <div id="sdp-answer-wrapper">
+        <button id="create-answer">Create answer</button>
+        <label for="sdp-answer">SDP answer</label>
+        <textarea name="sdp-answer" id="answer-sdp" cols="30" rows="10"></textarea>
+    </div>
+
+    <button id="add-answer">Add answer</button>
+
+</body>
+
+</html>
